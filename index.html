@@ -1,39 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <title>Frontend Mentor | Interactive pricing component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <div class="hero__container flex flex-col items-center justify-center">
+          <h1 class="hero__title text-neutral-300 text-center font-bolder">
+            Simple, traffic-based pricing
+          </h1>
+          <p
+            class="hero__description text-center font-semibold text-neutral-250"
+          >
+            Sign-up for our 30-day trial. No credit card required.
+          </p>
+        </div>
+        <div
+          class="hero__container flex flex-col items-center justify-center bg-neutral-100 gap-100 padding-inline-100"
+        >
+          <div class="wrapper flex flex-col items-center justify-center">
+            <span class="hero__text text-neutral-250 padding-100 text-uppercase"
+              ><output id="views">100</output>K Pageviews</span
+            >
+            <input
+              class="hero__input"
+              type="range"
+              id="pageviews"
+              min="10000"
+              max="1000000"
+              value="500000"
+              step="10000"
+            />
+            <span class="hero__text text-neutral-300 font-bolder">
+              <span id="price">$16</span>
+              <span class="text-neutral-250">/month</span>
+            </span>
+          </div>
+          <div class="hero__text">
+            <span class="text-neutral-250 font-semibold">Monthly Billing</span>
+            <label class="switch">
+              <input type="checkbox" id="sale" />
+              <span class="slider round"></span>
+            </label>
+            <span class="text-neutral-250 font-semibold">Yearly Billing</span>
+            <span
+              class="text-primary-250 bg-primary-200 rounded-100 font-semibold"
+              >-25%</span
+            >
+          </div>
+          <div class="hero__breakline bg-neutral-150"></div>
+          <div
+            class="hero__content flex flex-col items-center justify-center gap-100"
+          >
+            <div class="wrapper flex flex-col items-center justify-center">
+              <ul class="list" role="list">
+                <li>
+                  <span class="text-neutral-250 font-semibold"
+                    >Unlimited websites</span
+                  >
+                </li>
+                <li>
+                  <span class="text-neutral-250 font-semibold"
+                    >100% data ownership</span
+                  >
+                </li>
+                <li>
+                  <span class="text-neutral-250 font-semibold"
+                    >Email reports</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <button
+              class="hero__button bg-neutral-300 text-primary-300 rounded-100 font-bolder"
+            >
+              Start my trial
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
 </html>
