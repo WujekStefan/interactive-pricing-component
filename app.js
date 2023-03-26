@@ -20,7 +20,7 @@ function calculateCosts(value) {
   } else if (value <= 1000000){
     result = 36.00;
   }
-  return `$${result}`;
+  return result;
 }
 
 sale.addEventListener('click', ()=> {
